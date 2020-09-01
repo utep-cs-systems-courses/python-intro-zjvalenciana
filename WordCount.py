@@ -27,10 +27,10 @@ for word in word_list:
 out_file = open(output_file, 'w') #open file
 out_file.truncate() #delete everything
 
-for ele in sorted(dictionary):
-    string = str(dictionary[ele]) + "\t" + str(ele)
-    out_file.write(string)
-    out_file.write("\n")
+for ele in sorted(dictionary): #traverse dictionary and sort keys and values
+    string = str(dictionary[ele]) + "\t" + str(ele) #key and value
+    out_file.write(string) #write to file
+    out_file.write("\n") #add new line after evry key and value wrote
 
 out_file.close()
 file_copy.close()
