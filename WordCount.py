@@ -1,7 +1,7 @@
 from sys import argv
 from os.path import exists
 
-script, inout_file, output_file = argv
+script, input_file, output_file = argv
 
 print(f"Dies input file exist? {exists(input_file)}") #check if files exist
 print(f"Does output file exist? {exists(output_file)}")
@@ -16,4 +16,10 @@ file_data = file_data.lower() #replace uppercase with lowercase
 punc = '''!()-[]{};:'"\, <>./?@#$%^&*_~''' #non alphabetical characters
 for element in file_data: #traverse file and remove all non letters
     if element in punc:
-        file_data = file_data.preplace(element, " ")
+        file_data = file_data.replace(element, " ")
+
+word_list = file_data.split() #store in a list
+
+dictionary = {}
+for word in word_list:
+    dictionary[word] = dictionary.get(word, 0) + 1 #add words and increment values
